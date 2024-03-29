@@ -33,39 +33,39 @@ FIRO="4.1.5.3"
 RED='\033[0;31m'
 NC='\033[0m'
 
-apt update
-apt -y install linux-image-amd64 linux-headers-amd64 cinnamon firmware-linux firmware-linux-nonfree firmware-misc-nonfree firmware-realtek firmware-atheros firmware-bnx2 firmware-bnx2x firmware-brcm80211 firmware-ipw2x00 firmware-iwlwifi firmware-libertas firmware-netxen firmware-zd1211 b43-fwcutter firmware-b43-installer firmware-b43legacy-installer intel-media-va-driver-non-free libva-drm2 libva-x11-2 mesa-va-drivers i965-va-driver-shaders libnvcuvid1 xorg intel-microcode printer-driver-all fonts-crosextra-caladea fonts-crosextra-carlito wireshark tshark ffmpeg qrencode searchmonkey testdisk kleopatra keepassxc zulucrypt-gui firefox-esr ntfs-3g exfat-fuse wkhtmltopdf evince python3-tk python3-pip hashcat gedit libreoffice-writer libreoffice-calc tor secure-delete git python3-pip libsecp256k1-1 qtqr scdaemon firmware-intel-sound firmware-sof-signed zstd macchanger curl flameshot wget gnupg iptables ntp zenity make python3-full whois libusb-1.0-0-dev libudev-dev git libccid pcscd libopengl-dev guymager open-vm-tools open-vm-tools-desktop gnome-calculator gufw python3-full python3-virtualenv curl unzip libportaudio2 shotwell firmware-atheros firmware-realtek firmware-amd-graphics software-properties-common gdebi firmware-b43-installer firmware-realtek firmware-libertas firmware-brcm80211 grub-efi npm firmware-bnx2 firmware-bnx2x firmware-brcm80211 firmware-ipw2x00 firmware-libertas firmware-netxen firmware-zd1211 b43-fwcutter firmware-b43-installer firmware-b43legacy-installer firmware-sof-signed mesa-va-drivers i965-va-driver-shaders intel-media-va-driver-non-free vim net-tools libegl1-mesa libgl1-mesa-glx libxcb-cursor0 libxcb-xtest0 ibus libopengl-dev apt-utils firmware-netronome firmware-myricom debconf-i18n firmware-qlogic firmware-siano hdmi2usb-fx2-firmware pcscd firmware-ath9k-htc firmware-bnx2 firmware-bnx2x firmware-brcm80211 firmware-cavium firmware-ipw2x00 firmware-ivtv nvidia-detect pm-utils gtkhash firmware-realtek-rtl8723cs-bt eog libwxgtk3.2-1 bash-completion obsidian-icon-theme figlet papirus-icon-theme gir1.2-gtop-2.0 system-config-printer libsecp256k1-dev zip user-setup system-config-printer
+sudo apt update
+sudo apt -y install linux-image-amd64 linux-headers-amd64 cinnamon firmware-linux firmware-linux-nonfree firmware-misc-nonfree firmware-realtek firmware-atheros firmware-bnx2 firmware-bnx2x firmware-brcm80211 firmware-ipw2x00 firmware-iwlwifi firmware-libertas firmware-netxen firmware-zd1211 b43-fwcutter firmware-b43-installer firmware-b43legacy-installer intel-media-va-driver-non-free libva-drm2 libva-x11-2 mesa-va-drivers i965-va-driver-shaders libnvcuvid1 xorg intel-microcode printer-driver-all fonts-crosextra-caladea fonts-crosextra-carlito wireshark tshark ffmpeg qrencode searchmonkey testdisk kleopatra keepassxc zulucrypt-gui firefox-esr ntfs-3g exfat-fuse wkhtmltopdf evince python3-tk python3-pip hashcat gedit libreoffice-writer libreoffice-calc tor secure-delete git python3-pip libsecp256k1-1 qtqr scdaemon firmware-intel-sound firmware-sof-signed zstd macchanger curl flameshot wget gnupg iptables ntp zenity make python3-full whois libusb-1.0-0-dev libudev-dev git libccid pcscd libopengl-dev guymager open-vm-tools open-vm-tools-desktop gnome-calculator gufw python3-full python3-virtualenv curl unzip libportaudio2 shotwell firmware-atheros firmware-realtek firmware-amd-graphics software-properties-common gdebi firmware-b43-installer firmware-realtek firmware-libertas firmware-brcm80211 grub-efi npm firmware-bnx2 firmware-bnx2x firmware-brcm80211 firmware-ipw2x00 firmware-libertas firmware-netxen firmware-zd1211 b43-fwcutter firmware-b43-installer firmware-b43legacy-installer firmware-sof-signed mesa-va-drivers i965-va-driver-shaders intel-media-va-driver-non-free vim net-tools libegl1-mesa libgl1-mesa-glx libxcb-cursor0 libxcb-xtest0 ibus libopengl-dev apt-utils firmware-netronome firmware-myricom debconf-i18n firmware-qlogic firmware-siano hdmi2usb-fx2-firmware pcscd firmware-ath9k-htc firmware-bnx2 firmware-bnx2x firmware-brcm80211 firmware-cavium firmware-ipw2x00 firmware-ivtv nvidia-detect pm-utils gtkhash firmware-realtek-rtl8723cs-bt eog libwxgtk3.2-1 bash-completion obsidian-icon-theme figlet papirus-icon-theme gir1.2-gtop-2.0 system-config-printer libsecp256k1-dev zip user-setup system-config-printer
 
-apt -y --purge remove libreoffice-math libreoffice-draw apache2-bin
+sudo apt -y --purge remove libreoffice-math libreoffice-draw apache2-bin
 apt -y --purge autoremove
 
 # disable dot net telemetry
 export DOTNET_CLI_TELEMETRY_OUTPUT=1
 
 # add Kali repo to download bulkextractor
-cp /etc/apt/sources.list /etc/apt/sources.list.backup
-echo deb http://http.kali.org/kali kali-rolling main contrib non-free >> /etc/apt/sources.list
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6
-apt update
-apt -y install bulk-extractor
-cp /etc/apt/sources.list.backup /etc/apt/sources.list
-rm -rf /etc/apt/sources.list.backup
-echo deb http://www.bchemnet.com/suldr/ debian extra >> /etc/apt/sources.list
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FB510D557CC3E840
-apt update
-apt -y install suld-driver-4.01.17 suld-driver-common-1
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+sudo echo deb http://http.kali.org/kali kali-rolling main contrib non-free >> /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6
+sudo apt update
+sudo apt -y install bulk-extractor
+sudo cp /etc/apt/sources.list.backup /etc/apt/sources.list
+sudo rm -rf /etc/apt/sources.list.backup
+sudo echo deb http://www.bchemnet.com/suldr/ debian extra >> /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FB510D557CC3E840
+sudo apt update
+sudo apt -y install suld-driver-4.01.17 suld-driver-common-1
 
 cd /opt/
-mkdir Tools
+sudo mkdir Tools
 cd Tools
-mkdir Privacy
-mkdir Recovery
+sudo mkdir Privacy
+sudo mkdir Recovery
 #mkdir UsefulTools
-mkdir WalletGen
-mkdir Wallets
-mkdir WalletTools
+sudo mkdir WalletGen
+sudo mkdir Wallets
+sudo mkdir WalletTools
 cd Wallets
-mkdir HW
+sudo mkdir HW
 cd
 
 # Downloading and placing customization files
@@ -78,7 +78,7 @@ unzip single-archive.zip
 cd home/anubitux/temp_git
 cd etc
 cd lightdm
-cp -r -p * /etc/lightdm/
+sudo cp -r -p * /etc/lightdm/
 cd ..
 cd skel
 cd Desktop
@@ -103,19 +103,19 @@ cp .profile $HOME
 #cp -r -p * /etc/skel/
 cd ..
 cd ssl
-cp -r -p * /etc/ssl/
+sudo cp -r -p * /etc/ssl/
 cd ../..
-cp -r -p opt/* /opt/
+sudo cp -r -p opt/* /opt/
 cd usr
 cd share
 cd backgrounds
-cp -r -p AnuBitux_WP /usr/share/backgrounds/
+sudo cp -r -p AnuBitux_WP /usr/share/backgrounds/
 cd ../desktop-base/
-cp -r -p * /usr/share/desktop-base/
-cd ../icons/
-cp -r -p custom_icons /usr/share/icons/
+sudo cp -r -p * /usr/share/desktop-base/
+sudo cd ../icons/
+sudo cp -r -p custom_icons /usr/share/icons/
 cd ../plymouth/
-cp -r -p * /usr/share/plymouth/
+sudo cp -r -p * /usr/share/plymouth/
 cd
 chmod +x $HOME/Desktop/*
 cd
@@ -156,7 +156,7 @@ sudo dpkg -i atomic*
 rm -rf atomic*
 
 # VeraCrypt
-sudo apt install libwxgtk3.2-1
+sudo apt -y install libwxgtk3.2-1
 wget --user-agent="Mozilla" https://launchpad.net/veracrypt/trunk/$VERACRYPT/+download/veracrypt-$VERACRYPT-Debian-12-amd64.deb
 wget https://launchpad.net/veracrypt/trunk/1.26.7/+download/veracrypt-1.26.7-Debian-12-amd64.deb
 sudo dpkg -i veracrypt*
@@ -165,20 +165,10 @@ rm -rf veracrypt*
 # Just in case something went wrong
 apt --fix-broken install
 
-# GitHub Tools
-cd /opt
-mkdir Tools
-cd Tools
-mkdir Privacy
-mkdir Recovery
-mkdir WalletGen
-mkdir Wallets
-mkdir WalletTools
-cd Wallets
-mkdir HW
-cd ..
 # make pip work
 rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+
+sudo chmod -R 777 /opt/*
 
 #VeraDecrypt
 cd /opt/Tools/Recovery
@@ -276,7 +266,7 @@ python3 -m pip install bitbox02
 python3 -m pip install safet
 python3 -m pip install ckcc-protocol
 python3 -m pip install pyserial cbor
-cd cd /opt/Tools/Wallets/HW/
+cd /opt/Tools/Wallets/HW/
 git clone https://github.com/AnuBitux/udev
 cp /opt/Tools/Wallets/HW/udev/*.rules /etc/udev/rules.d
 groupadd plugdev
@@ -360,21 +350,6 @@ cd
 
 # Updating initram for new files placed in /usr/share/
 update-initramfs -u
-
-# Cleaning useless files
-rm -rf /usr/share/backgrounds/gnome/*.jpg
-rm -rf /usr/share/desktop-base/joy-inksplat-theme
-rm -rf /usr/share/desktop-base/joy-theme
-rm -rf /usr/share/desktop-base/lines-theme
-rm -rf /usr/share/desktop-base/moonlight-theme
-rm -rf /usr/share/desktop-base/softwaves-theme
-rm -rf /usr/share/desktop-base/spacefun-theme
-rm -rf /usr/share/plymouth/themes/futureprototype
-rm -rf /usr/share/plymouth/themes/joy
-rm -rf /usr/share/plymouth/themes/lines
-rm -rf /usr/share/plymouth/themes/moonlight
-rm -rf /usr/share/plymouth/themes/softwaves
-rm -rf /usr/share/plymouth/themes/spacefun
 
 # Making tools working properly
 chmod -R 777 /opt/*
