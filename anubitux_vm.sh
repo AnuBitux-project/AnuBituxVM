@@ -60,6 +60,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FB510D557CC3E840
 sudo apt update
 sudo apt -y install suld-driver-4.01.17 suld-driver-common-1
 
+chmod -R 777 /opt/
 cd /opt/
 sudo mkdir Tools
 cd Tools
