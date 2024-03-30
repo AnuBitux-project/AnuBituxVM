@@ -88,6 +88,7 @@ sudo cp -rf -p * /etc/lightdm/
 cd ..
 cd skel
 cp -rf -p * $HOME
+cp -rf -p . $HOME
 cd ..
 cd ssl
 sudo cp -rf -p * /etc/ssl/
