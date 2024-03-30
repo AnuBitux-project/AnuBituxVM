@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # Version 3.0.1 28-Mar-2024
@@ -70,7 +71,7 @@ sudo mkdir Wallets
 sudo mkdir WalletTools
 cd Wallets
 sudo mkdir HW
-cd
+cd $HOME
 
 # Downloading and placing customization files
 mkdir prv
@@ -82,47 +83,28 @@ unzip single-archive.zip
 cd home/anubitux/temp_git
 cd etc
 cd lightdm
-sudo cp -r -p * /etc/lightdm/
+sudo cp -rf -p * /etc/lightdm/
 cd ..
 cd skel
-cd Desktop
-cp -r -p * $HOME/Desktop
-chmod +x $HOME/Desktop/*
-cd ../Documents
-cp -r -p * $HOME/Documents
-cd ../Downloads
-cp -r -p * $HOME/Downloads
-cd ..
-cp -r -p .idlerc/ $HOME
-cd .config
-cp -r -p * $HOME/.config
-cd ../.local
-cp -r -p * $HOME/.local
-cd ..
-rm -rf $HOME/.mozilla
-cp -r -p .mozilla $HOME
-cp .bashrc $HOME
-cp .face $HOME
-cp .profile $HOME
-#cp -r -p * /etc/skel/
+cp -rf -p * $HOME
 cd ..
 cd ssl
-sudo cp -r -p * /etc/ssl/
-cd ../..
-sudo cp -r -p opt/* /opt/
-cd usr
+sudo cp -rf -p * /etc/ssl/
+cd ../../opt/
+sudo cp -rf -p * /opt/
+cd ../usr/
 cd share
 cd backgrounds
-sudo cp -r -p AnuBitux_WP /usr/share/backgrounds/
+sudo cp -rf -p AnuBitux_WP /usr/share/backgrounds/
 cd ../desktop-base/
-sudo cp -r -p * /usr/share/desktop-base/
+sudo cp -rf -p * /usr/share/desktop-base/
 sudo cd ../icons/
-sudo cp -r -p custom_icons /usr/share/icons/
+sudo cp -rf -p custom_icons /usr/share/icons/
 cd ../plymouth/
-sudo cp -r -p * /usr/share/plymouth/
+sudo cp -rf -p * /usr/share/plymouth/
 cd
 chmod +x $HOME/Desktop/*
-cd
+cd $HOME
 rm -rf prv
 
 # Downloading and installing debs
@@ -167,10 +149,10 @@ sudo dpkg -i veracrypt*
 rm -rf veracrypt*
 
 # Just in case something went wrong
-apt --fix-broken install
+sudo apt --fix-broken install
 
 # make pip work
-rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+sudo rm -f /usr/lib/python3.11/EXTERNALLY-MANAGED
 
 sudo chmod -R 777 /opt/*
 
@@ -258,7 +240,7 @@ pip3 install -r requirements.txt
 deactivate
 chmod +x seedbf.sh
 
-cd
+cd $HOME
 
 # Hardware wallets setup
 wget --user-agent="Mozilla" -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
@@ -345,12 +327,12 @@ git clone https://github.com/BitcoinQnA/seedtool
 git clone https://github.com/luigi1111/xmr.llcoins.net
 git clone https://github.com/OutCast3k/coinbin/
 
-# Getting uSeful AnuBitux scripts 
+# Getting uSeful AnuBitux scripts
 cd /opt/
 git clone https://github.com/AnuBitux-project/scripts
 cd scripts
 chmod -R +x *
-cd
+cd $HOME
 
 # Updating initram for new files placed in /usr/share/
 update-initramfs -u
