@@ -163,7 +163,7 @@ cd VeraDecrypt
 virtualenv vdve
 source vdve/bin/activate
 deactivate
-chmod +x veradecrypt.sh
+sudo chmod +x veradecrypt.sh
 
 # SeedCheck
 cd /opt/Tools/WalletTools/
@@ -173,7 +173,7 @@ virtualenv scve
 source scve/bin/activate
 pip3 install -r requirements.txt
 deactivate
-chmod +x seedcheck.sh
+sudo chmod +x seedcheck.sh
 
 # DiceTracker
 cd /opt/Tools/WalletGen/
@@ -183,14 +183,14 @@ virtualenv dtve
 source dtve/bin/activate
 pip3 install -r requirements.txt
 deactivate
-chmod +x dicetracker.sh
+sudo chmod +x dicetracker.sh
 
 # Dice2Seed
 cd /opt/Tools/WalletGen/
 git clone https://github.com/AnuBitux/Dice2Seed
 cd Dice2Seed
 virtualenv dsve
-chmod +x Dice2Seed.sh
+sudo chmod +x Dice2Seed.sh
 
 # LastWord
 cd /opt/Tools/WalletGen/
@@ -207,8 +207,8 @@ source brve/bin/activate
 pip3 install -r requirements.txt
 pip3 install -r requirements-full.txt
 deactivate
-chmod +x btcrecover.sh
-chmod +x seedrecover.sh
+sudo chmod +x btcrecover.sh
+sudo chmod +x seedrecover.sh
 
 # SeedSearch
 cd /opt/Tools/Recovery
@@ -218,7 +218,7 @@ virtualenv ssve
 source ssve/bin/activate
 pip3 install -r requirements.txt
 deactivate
-chmod +x seedsearch.sh
+sudo chmod +x seedsearch.sh
 
 # BtcKeySearch
 cd /opt/Tools/Recovery
@@ -228,7 +228,7 @@ virtualenv bkve
 source bkve/bin/activate
 pip3 install -r requirements.txt
 deactivate
-chmod +x btckeysearch.sh
+sudo chmod +x btckeysearch.sh
 
 # SeedBF
 cd /opt/Tools/Recovery
@@ -238,7 +238,7 @@ virtualenv sbve
 source sbve/bin/activate
 pip3 install -r requirements.txt
 deactivate
-chmod +x seedbf.sh
+sudo chmod +x seedbf.sh
 
 cd $HOME
 
@@ -282,7 +282,7 @@ tar -xf coinomi*
 rm -rf coinomi-wallet-$COINOMI-linux64.tar.gz
 wget --user-agent="Mozilla" https://github.com/firoorg/electrum-firo/releases/download/$FIRO/Firo-Electrum-$FIRO-x86_64.AppImage
 mv Firo-* electrum-firo.AppImage
-chmod -R +x *
+sudo chmod -R +x *
 
 # hardware wallets clients
 cd HW
@@ -298,7 +298,7 @@ wget --user-agent="Mozilla" https://dl.update.bc-vault.com/downloads/$BCVAULT.ta
 tar -xf setup*
 ./setup*
 rm -rf setup*
-chmod -R +x *
+sudo chmod -R +x *
 
 # Tor-browser
 cd $HOME
@@ -331,14 +331,14 @@ git clone https://github.com/OutCast3k/coinbin/
 cd /opt/
 git clone https://github.com/AnuBitux-project/scripts
 cd scripts
-chmod -R +x *
+sudo chmod -R +x *
 cd $HOME
 
 # Updating initram for new files placed in /usr/share/
 update-initramfs -u
 
 # Making tools working properly
-chmod -R 777 /opt/*
+sudo chmod -R 777 /opt/*
 
 # Starting the bulding process
 echo -e remember to update ${RED}/opt/scripts/Info.sh${NC}
