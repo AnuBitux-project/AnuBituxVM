@@ -330,6 +330,7 @@ git clone https://github.com/luigi1111/xmr.llcoins.net
 git clone https://github.com/OutCast3k/coinbin/
 
 # Getting uSeful AnuBitux scripts
+sudo chmod 777 /opt/
 cd /opt/
 git clone https://github.com/AnuBitux-project/scripts
 cd scripts
