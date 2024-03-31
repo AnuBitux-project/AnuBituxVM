@@ -100,7 +100,7 @@ cd backgrounds
 sudo cp -rf -p AnuBitux_WP /usr/share/backgrounds/
 cd ../desktop-base/
 sudo cp -rf -p * /usr/share/desktop-base/
-sudo cd ../icons/
+cd ../icons/
 sudo cp -rf -p custom_icons /usr/share/icons/
 cd ../plymouth/
 sudo cp -rf -p * /usr/share/plymouth/
