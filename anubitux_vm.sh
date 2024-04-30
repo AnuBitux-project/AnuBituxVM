@@ -31,6 +31,8 @@ MONEROCLI="0.18.3.3"
 FIRO="4.1.5.3"
 TONKEEPER="3.9.3"
 TONKEEPER2="_3.9.3_amd64"
+GUARDA="1.0.20"
+GUARDA2="1.0.20_amd64"
 
 # COLORS
 RED='\033[0;31m'
@@ -157,6 +159,10 @@ wget --user-agent="Mozilla" https://github.com/tonkeeper/tonkeeper-web/releases/
 dpkg -i tonkeeper*
 rm -rf tonkeeper*
 
+wget --user-agent="Mozilla" https://github.com/guardaco/guarda-desktop-releases/releases/download/v$GUARDA/Guarda_$GUARDA2.deb
+dpkg -i Guarda*
+rm -rf Guarda*
+
 # Just in case something went wrong
 sudo apt --fix-broken install
 
@@ -200,6 +206,34 @@ git clone https://github.com/AnuBitux/Dice2Seed
 cd Dice2Seed
 virtualenv dsve
 sudo chmod +x Dice2Seed.sh
+
+# Mic2Paper
+cd /opt/Tools/WalletGen/
+git clone https://github.com/AnuBitux/Mic2Paper
+cd Mic2Paper
+virtualenv mpve
+source mpve/bin/activate
+pip3 install -r requirements.txt
+deactivate
+
+# Mic2Seed
+cd /opt/Tools/WalletGen/
+git clone https://github.com/AnuBitux/Mic2Seed
+cd Mic2Seed
+virtualenv msve
+source msve/bin/activate
+pip3 install -r requirements.txt
+deactivate
+
+# MicCheck
+cd /opt/Tools/WalletGen/
+git clone https://github.com/AnuBitux/MicCheck
+cd MicCheck
+virtualenv mcve
+source mcve/bin/activate
+pip3 install -r requirements.txt
+deactivate
+chmod +x play_audio.sh
 
 # LastWord
 cd /opt/Tools/WalletGen/
