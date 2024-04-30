@@ -31,6 +31,8 @@ MONEROCLI="0.18.3.3"
 FIRO="4.1.5.3"
 TONKEEPER="3.9.3"
 TONKEEPER2="_3.9.3_amd64"
+GUARDA="1.0.20"
+GUARDA2="1.0.20_amd64"
 
 # COLORS
 RED='\033[0;31m'
@@ -88,6 +90,10 @@ wget --user-agent="Mozilla" https://github.com/tonkeeper/tonkeeper-web/releases/
 dpkg -i tonkeeper*
 rm -rf tonkeeper*
 
+wget --user-agent="Mozilla" https://github.com/guardaco/guarda-desktop-releases/releases/download/v$GUARDA/Guarda_$GUARDA2.deb
+dpkg -i Guarda*
+rm -rf Guarda*
+
 # Just in case something went wrong
 sudo apt --fix-broken install
 
@@ -111,6 +117,18 @@ git pull
 
 # LastWord
 cd /opt/Tools/WalletGen/LastWord
+git pull
+
+# Mic2Paper
+cd /opt/Tools/WalletGen/Mic2Paper
+git pull
+
+# Mic2Seed
+cd /opt/Tools/WalletGen/Mic2Seed
+git pull
+
+# MicCheck
+cd /opt/Tools/WalletGen/MicCheck
 git pull
 
 # btcrecover
